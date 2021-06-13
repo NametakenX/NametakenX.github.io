@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Chinese Paladin Sword and Fairy 6</title>
+		<style>
+body {
+  background: #24282f;                                /* main background color in case of no image */
+  font-family: 'Arial';                               /* font arial which should be readable */
+  Height:100%;                                        /* set width to 100% also needed for background */
+  margin:0px;                                         /* hide any margins */
+  background-size: cover;                             /* size background image without distortion along width and height */
+  background-repeat: no-repeat;                       /* no background repeat */
+  Background-attachment:fixed;                        /* needed to make background image behave properly */
+  overflow-y:hidden;                                  /* no normal overflow, only our containers (details & description) will overflow or have scrollbar * /
+}
+ 
+html {
+  height:100%;                                        /* need to set this to 100% to make the background behave propertly */
+}
+
+.title h2 {
+  padding-left: 25px;                                 /* left padding */
+  color: #ccc;                                        /* text color */
+  margin: 0;                                          /* no margins */
+  background-color: black;                            /* black background */
+  vertical-align: middle;                             /* align vertical middle */
+}
+
+.title img {
+	vertical-align: middle;                           /* images in title aligned vertical middle */
+}
+
+.title {
+	width: 100%;                                      /* title container width 100% */
+	grid-column: 1 / span 3;                          /* column 1 but spans 3 */
+    grid-row: 1;                                      /* row 1 */
+
+}
+.cards {                                              /* empty not used here */
+}
+
+.card {
+	display: grid;                                    /* container which is the grid */
+	grid-template-columns: min-content;               /* size columns to minimum content */
+	grid-template-rows: min-content min-content;      /* size rows to minimum content */
+	height: 100vh;                                    /* 100% viewport height */
+}
+
+.detailstitle{
+  grid-column: 1;                                     /* 1st column */
+  grid-row: 2;                                        /* 2nd row */
+  width: 350px;                                       /* fixed width set to same size as details */
+  padding-left: 10px;                                 /* some padding left */
+  padding-right: 10px;                                /* some padding right */
+}
+
+.details {
+  padding-left: 10px;                                 /* some padding left */
+  padding-right: 10px;                                /* some padding right */
+  color: #ccc;
+  grid-column: 1;                                      /* 1st column */
+  grid-row: 3;                                         /* 3rd row of grid */
+  width: 350px;                                        /* fixed width of details */
+  overflow-y: auto;                                     /* add vertical scrollbar if needed */
+  overflow-x:hidden;                                   /* don't overflow on x axis (no horz scrollbar) */
+ }
+ 
+.detailstitle h3,
+.descriptiontitle h3 {
+	border-bottom: 1px solid #ccc;                     /* titles of description details should have line under it */
+	padding: 5px;                                      /* add some padding */
+	color: #ccc;                                       /* text color of the titles */
+}
+
+.detailstable th, td {
+  border: 0px;                                         /* no borders on td, th elements */
+  color: #ccc;                                         /* details table text color */
+}
+
+.detailstable td {
+  text-align: left;                                    /* align text left */
+  vertical-align: top;                                 /* align top */
+}
+
+.detailstable {
+  width: 100%;                                         /* set to full width of details */
+  padding: 5px;                                        /* add some padding */
+}
+
+.details img {
+	max-width: 100%;                                   /* make sure images don't overflow in width on details */
+}
+
+.descriptiontitle {
+	grid-column: 2;                                    /* column 2 of grid */
+	grid-row: 2;                                       /* row 2 of grid */
+	padding-left: 10px;                                /* some padding left */
+	padding-right: 10px;                               /* some padding right */
+}
+
+
+.description {
+	color: #ccc;                                       /* text color */
+	grid-column: 2;                                    /* 2nd column of grid */
+	grid-row: 3;                                       /* 3rd row of grid */
+	overflow-y: auto;                                  /* overflow-y automatic (for adding scrollbar) */
+	overflow-x:hidden;                                 /* prevent horizontal scrollbar */
+	padding-left: 10px;                                /* some padding left */
+	padding-right: 10px;                               /* some padding right */
+}
+
+.description img {
+	max-width: 100%;                                   /* make sure images don't overflow in width to prevent scrollbars */
+}
+
+.footer {
+	grid-column:1;                                     /* 1st column of grid */
+	grid-row:3;                                        /* 3rd row of grid */
+}
+
+.MenuButton {
+  border: none;                                        /* Remove borders */
+  outline: none;                                       /* Remove outline */
+  background-color: #888;                              /* Set a background color */
+  color: #000;                                         /* Text color */
+  padding: 5px;                                        /* Some padding */
+  border-radius: 4px;                                  /* Rounded corners, border */
+  font-size: 20px;                                     /* Increase font size */
+  cursor:pointer;                                         /* Add a mouse pointer on hover */
+  margin-right: 20px;                                  /* to have some space on right side before next element */
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  text-decoration: none;
+}
+
+.MenuButton:hover {
+  background-color: #777;                              /* Add a dark-grey background on hover */
+  color: #CCC;                                         /* Text color */
+}
+
+a {
+ text-decoration: none;                                /* no text underline in links */
+}
+a:link {
+  color: #B1B1B1;                                      /* unvisited link color */
+}
+a:visited {
+  color: #B1B1B1;                                      /* visited link color */
+}
+a:hover {
+  color: #D1D1D1;                                      /* mouse over link color */
+  text-decoration: underline;                          /* add text underline in links when mouse over */
+}
+a:active {
+  color: #B1B1B1;                                      /* selected link color */
+}
+
+                                                       /* scrollbars W3C standard that is currently Firefox-only */
+* {
+  scrollbar-width: thin;                               /* small width */
+  scrollbar-color: #888 transparent;                   /* trackbar color + transparant background */
+}
+
+                                                       /* scrollbars on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 12px;                                         /* small width */
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;                             /* background color track */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #AAA;                              /* background */
+  border-radius: 20px;                                 /* rounded corner, border */
+  border: 3px solid #888;                              /* add the border */
+}
+
+		</style>
+	</head>
+	<body style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.52), rgba(0,0,0,0.73)), url('b8fcd9fb-9a50-40b3-b1bf-fbf82680c8fe/82078071-dac1-4315-b310-81b46e477c51.jpg');">
+		<div class="cards">
+			<div class="card">
+				<div class="title">
+					<h2><button onclick="window.history.back()" class="MenuButton">Back</button><img alt="icon" Height="48" class="lozad" data-src="b8fcd9fb-9a50-40b3-b1bf-fbf82680c8fe/c2e2594f-3c97-4c0f-8f40-ac98c9793bff.ico"/> Chinese Paladin Sword and Fairy 6</h2>
+				</div>
+				<div class="detailstitle">
+				<H3>Details</H3>
+				</div>
+				<div class="details">
+					<div style="overflow: auto;">
+						<TABLE class="detailstable">
+							<col style="width:50%" />
+							<col style="width:50%" />
+							<TR>
+								<TD style="text-align:center" Colspan="2"><img alt="cover" Height="175" class="lozad" data-src="b8fcd9fb-9a50-40b3-b1bf-fbf82680c8fe/e10debc4-a0a3-4b93-8952-45a00e680b0c.jpg"/></TD>
+							</TR>
+							<TR>
+								<TD>Playtime</TD>
+								<TD>Not Played</TD>
+							</TR>
+							<TR>
+								<TD>Last Activity</TD>
+								<TD><a href="#quicklink-Never">Never</a> </TD>
+							</TR>
+							<TR>
+								<TD>Added</TD>
+								<TD><a href="default%20combobox%20quicklinks_added_descending_name_ascending.html#quicklink-14.4.2021">14.4.2021</a> 19:48:46</TD>
+							</TR>
+							<TR>
+								<TD>Modified</TD>
+								<TD><a href="#quicklink-08.5.2021">08.5.2021</a> 22:48:09</TD>
+							</TR>
+							<TR>
+								<TD>Completion Status</TD>
+								<TD><a href="default_completionstatus_ascending_name_ascending.html#quicklink-Not Played">Not Played</a></TD>
+							</TR>
+							<TR>
+								<TD>Source</TD>
+								<TD><a href="default_source_ascending_name_ascending.html#quicklink-Steam">Steam</a></TD>
+							</TR>
+							<TR>
+								<TD>Platform</TD>
+								<TD><a href="default_platform_ascending_name_ascending.html#quicklink-PC">PC</a></TD>
+							</TR>
+							<TR>
+								<TD>Release Date</TD>
+								<TD><a href="#quicklink-14.11.2017">14.11.2017</a> </TD>
+							</TR>
+							<TR>
+								<TD>Community Score</TD>
+								<TD><a href="#quicklink-54">54</a></TD>
+							</TR>
+							<TR>
+								<TD>Critic Score</TD>
+								<TD><a href="#quicklink-"></a></TD>
+							</TR>
+							<TR>
+								<TD>User Score</TD>
+								<TD><a href="#quicklink-"></a></TD>
+							</TR>
+							<TR>
+								<TD>Genre</TD>
+								<TD><a href="default%20combobox%20quicklinks_genre_ascending_name_ascending.html#quicklink-RPG">RPG</a><br/></TD>
+							</TR>
+							<TR>
+								<TD>Developer</TD>
+								<TD><a href="default%20combobox%20quicklinks_developer_ascending_name_ascending.html#quicklink-SOFTSTAR ENTERTAINMENT INC.">SOFTSTAR ENTERTAINMENT INC.</a><br/></TD>
+							</TR>
+							<TR>
+								<TD>Publisher</TD>
+								<TD><a href="default%20combobox%20quicklinks_publisher_ascending_name_ascending.html#quicklink-SOFTSTAR ENTERTAINMENT INC.">SOFTSTAR ENTERTAINMENT INC.</a><br/></TD>
+							</TR>
+							<TR>
+								<TD>Feature</TD>
+								<TD><a href="default%20combobox%20quicklinks_feature_ascending_name_ascending.html#quicklink-Achievements">Achievements</a><br/><a href="default%20combobox%20quicklinks_feature_ascending_name_ascending.html#quicklink-Cloud Saves">Cloud Saves</a><br/><a href="default%20combobox%20quicklinks_feature_ascending_name_ascending.html#quicklink-Single-Player">Single-Player</a><br/><a href="default%20combobox%20quicklinks_feature_ascending_name_ascending.html#quicklink-Trading Cards">Trading Cards</a><br/></TD>
+							</TR>
+							<TR>
+								<TD>Links</TD>
+								<TD><a href="https://steamcommunity.com/app/696360" target="_blank">Community Hub</a><br/><a href="https://steamcommunity.com/app/696360/discussions/" target="_blank">Discussions</a><br/><a href="https://steamcommunity.com/app/696360/guides/" target="_blank">Guides</a><br/><a href="https://store.steampowered.com/news/?appids=696360" target="_blank">News</a><br/><a href="https://store.steampowered.com/app/696360" target="_blank">Store Page</a><br/><a href="https://pcgamingwiki.com/api/appid.php?appid=696360" target="_blank">PCGamingWiki</a><br/><a href="https://steamcommunity.com/stats/696360/achievements" target="_blank">Achievements</a><br/></TD>
+							</TR>
+						</TABLE>
+					</div>
+				</div>
+				<div class="descriptiontitle">
+					<H3>Description</H3>
+				</div>
+				<div class="description">
+					Since the birth of the ancient god Shen Nong, the nine springs of Jiuquan have anchored the Heavens and Earth. Each of the Jiuquan possess supernatural powers, and each are a fountain of energy and life for the universe.  In the War of the Three Tribes, the Beasts were defeated by the coalition of Humans and Gods. The tribe of the Beasts retreated to the Demon World and since then Gods, Demons and Men have lived in isolation. After the war, Shen Nong and the Jiuquan disappeared from the world, and as time flowed on… the legend of the Jiuquan was lost.<br><br>　　Yue Jinzhao and Yue Qi arrive in the West Side, searching for something they had lost -- what they will find instead is an ancient secret uncovered. Elsewhere, a gargantuan slumbering beast awakens in the sea -- soaring to the skies, and bewildered at the voice in its head.<br><br>　　In the martial world, factions struggle for control: True Martial Alliance, Risen Soul Saints, Hengdao Society and the demonic Piscis… who are the true masterminds behind the traps within traps, the devious plans and evil designs? Destinies will unfold and become undone, as sacrifices are made… in the celebration of life.<br><ul class="bb_ul"><li><strong>[Dual Combat System]</strong>：features a fusion of real-time and turn-based dual combat modes, with both modes able to be freely selected by players.<br><br></li><li><strong>[Combat Formations]</strong>：adds more variety to enemy battles. In normal combat, players can control one character, and use formations to execute skills to break through enemy defense or deal damage. Players can go commands for such things as a focused attack, priority to heal, etc. There are also special modes such as aerial fights and ranged shooting.<br><br></li><li><strong>[Difficulty ]</strong>：Easy, Normal and Hard difficulties are available for selection. Hard difficulty will be available after the first playthrough. Players can also lower the difficulty during gameplay -- once the difficulty is lowered, it can not be changed. (Players who lower their difficulty can not challenge the Hard final boss in their first playthrough.)<br><br></li><li><strong>[Charged Attack]</strong>：features a new special attack system. Using MP accumulated during battle, players can use either “Technique,”“Harmony,”or “Slash” Charged Attacks and turn the tide of battle!<br><br></li><li><strong>[Surprise Attack]</strong>：players can surpised attack enemies during combat encounters. Players will deal surprise attack damage based on the difference between player and enemy levels. If the party leader is of a much higher level than the average level of the enemies, a surprise attacks can even be an instant victory, without going into battle.<br><br></li><li><strong>[Scenario Battles]</strong>：During scenario Boss fights, combat can occur directly after the cutscene ends, without switching modes or going into an encounter screen. This is a new storytelling mechanic introduced for the first time in the series.</li></ul><ul class="bb_ul"><li><strong>[Exploration Jumps]</strong>：Characters can freely explore the map, seeking out secret spots and paths. Maps and stages are larger and have more vertical space than ever before, with mysterious items waiting to be found. These items not only have special effects, but also increase player reputation, which can be used to exchange costumes and titles.<br><br></li><li><strong>[Weapon Transmogrify]</strong>：players can mold the appearance of their weapons to their desire. Players will be able to change the look of their weapon to another that they already have, while the basic stats of the weapon remain unaffected. As the weapons are shown in real-time in the game, players dictate not only the fashion, but also how their battles and skills look during combat.<br><br></li><li><strong>[Reputation]</strong>：awarded by completing quests from NPCs, items can be exchaged with different factions if the reputation requirements are met. Faction-specific items can be exchanged with especially high reputation.<br><br></li><li><strong>[Meridian System]</strong>：Each character in the game has 3 souls, with their own different attributes. Players can customize the characters by choosing different attributes in those souls. Each node selected has different effects, and special hidden effects may be found if the right nodes are selected.<br><br></li><li><strong>[Event Mini-games]</strong>：various mini-games are scattered throughout the game. Puzzles, traps and games can be played using character-specific stage skills. With the free exploration that the game world offers, players can discover hidden events, and possible even find secret items.<br><br></li><li><strong>[Stage Skills]</strong>：Each of the six main characters have their own “stage skills” that can be used. Players will need to utilize these skills to overcome certain puzzle and traps. Yue Jinzhao’s “Flight of Sword” allows players to fly over obstacles to reach places impossible to travel to otherwise.</li></ul>
+				</div>
+				<div class="footer"> </div>
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+		<script>
+			const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+			observer.observe();
+		</script>
+	</body>	
+</html>
